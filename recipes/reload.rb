@@ -15,7 +15,6 @@ ruby_block 'conditional-monit-reload' do
       Chef::Log.info('Found updated monit resource, issuing monit reload.')
       execute_reload = Chef::Resource::Execute.new('monit reload', run_context)
       execute_reload.command 'monit reload'
-      execute_reload.run_action :nothing
     end
   end
   action :nothing
